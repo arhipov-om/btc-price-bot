@@ -2,8 +2,31 @@
 name = "btc-price"
 version = "0.1.0"
 description = ""
-requires-python = ">=3.13"
+requires-python = ">=3.9"
 dependencies = [
     "aiogram>=3.22.0",
     "environs>=14.3.0",
+]
+
+[dependency-groups]
+dev = [
+    "ruff",
+]
+
+[tool.ruff]
+line-length = 120
+
+[ruff.lint]
+select = [
+    "E",    # pycodestyle (базовый стиль)
+    "F",    # pyflakes (ошибки)
+    "B",    # flake8-bugbear (опасные конструкции)
+    "I",    # isort (сортировка импортов)
+    "UP",   # pyupgrade (современный синтаксис)
+    "ANN",  # flake8-annotations (type hints)
+    "N",    # pep8-naming (именование)
+    "S",    # bandit (security)
+    "A",    # flake8-builtins (не переопределять встроенные имена)
+    "C4",   # flake8-comprehensions (эффективные списковые выражения)
+    "T20",  # flake8-print (запрет print в проде)
 ]
